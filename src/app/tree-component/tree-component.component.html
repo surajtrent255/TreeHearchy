@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let node of nodes">
+    <button (click)="toggleNode(node)">{{ node.name }}</button>
+    <app-tree-component
+      *ngIf="node.showChildren && node.children"
+      [nodes]="node.children"
+    ></app-tree-component>
+  </li>
+</ul>
